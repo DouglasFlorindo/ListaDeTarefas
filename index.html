@@ -15,11 +15,15 @@
         <h1>Lista de Tarefas</h1>
         <form>
             <input type="text" placeholder="Insira a sua tarefa..." id="inputTexto">
-            <button id="botaoCriar"><span class="material-symbols-rounded">edit</span></button>
+            <button type="button" id="botaoCriar"><span class="material-symbols-rounded">edit</span></button>
         </form>
     </nav>
-    <div id="tarefas">
-        
+    <div id="lista">
+        <div class="itemLista">
+            <input type="checkbox" class="checkBox" onchange="marcarTarefa(this)">
+            <p class="itemLista">Lorem etc</p>
+            <button class="botaoDeletar" onclick="deletarTarefa(this)"><span class="material-symbols-rounded">delete</span></button>
+        </div>
     </div>
 </body>
 

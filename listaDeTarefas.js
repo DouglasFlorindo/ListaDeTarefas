@@ -1,7 +1,15 @@
 const lista = document.getElementById('lista');
 const botaoCriar = document.getElementById('botaoCriar');
+const inputTexto = document.getElementById('inputTexto');
 
 botaoCriar.addEventListener('click', criarTarefa);
+
+inputTexto.addEventListener('keypress', (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        criarTarefa();
+    }
+});
 
 function criarTarefa() {
 
@@ -9,11 +17,11 @@ function criarTarefa() {
 
     if (conteudoTarefa) {
 
-        let novoDiv = document.createElement('DIV');
-        let novoP = document.createElement('P');
-        let novoInput = document.createElement('INPUT');
-        let novoButton = document.createElement('BUTTON');
-        let novoSpan = document.createElement('SPAN');
+        let novoDiv = document.createElement('dib');
+        let novoP = document.createElement('p');
+        let novoInput = document.createElement('input');
+        let novoButton = document.createElement('button');
+        let novoSpan = document.createElement('span');
 
         novoDiv.className = "itemLista";
         lista.appendChild(novoDiv);
@@ -37,10 +45,14 @@ function criarTarefa() {
     }
 };
 
-function marcarTarefa() {
-
+function marcarTarefa(elemento) {
+    if (elemento.checked) {
+        elemento.nextElementSibling.classList.add('feito');
+    } else {
+        elemento.nextElementSibling.classList.remove('feito');
+    };
 };
 
-function deletarTarefa() {
-
+function deletarTarefa(elemento) {
+    elemento.parentElement.remove();
 };

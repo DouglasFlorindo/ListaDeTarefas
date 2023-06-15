@@ -1,5 +1,6 @@
 :root {
     --destaque: #ec2356;
+    --translucido: rgb(255, 255, 255, 0.3);
 }
 
 * {
@@ -8,7 +9,7 @@
 }
 
 body {
-    background-image: linear-gradient(to right top, #d16ba5, #cd6fb2, #c873bf, #c078cc, #b67ed8, #a38fea, #8d9ff7, #76adff, #61c6ff, #68dbff, #86eefe, #adfffa);
+    background-image: linear-gradient(to right top, #e86284, #df75b6, #c38edf, #9ca7f7, #73bcff);
     height: 100svh;
     display: flex;
     flex-direction: column;
@@ -25,13 +26,14 @@ nav {
 }
 
 h1 {
-    /* height: 75%; */
     font-size: 55px;
     width: 400px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Bad Script', cursive;
+    text-shadow: 2px 2px rgb(172, 172, 172);
 }
 
 form {
@@ -60,6 +62,8 @@ button {
 
 button:hover {
     cursor: pointer;
+    transform: rotate(10deg);
+    scale: 1.2;
 }
 
 #inputTexto {
@@ -69,10 +73,11 @@ button:hover {
     height: 50px;
     border-radius: 25px;
     border: 0;
+    transition: all 0.3s;
 }
 
-.checkBox {
-    margin-right: 10px;
+#inputTexto:hover {
+    scale: 1.1;
 }
 
 #lista {
@@ -87,7 +92,34 @@ button:hover {
     align-items: center;
 }
 
+#footer {
+    font-family: 'Shadows Into Light Two';
+    color: white;
+    margin: 10px;
+}
+
+.checkBox {
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-right: 10px;
+    appearance: none;
+    min-width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.checkBox:hover {
+    background-color: var(--translucido);
+}
+
+.checkBox:checked{
+    background-color: white;
+}
+
 .botaoDeletar {
+    width: auto;
     color: white;
     background-color: transparent;
 }
@@ -107,11 +139,15 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     min-height: 50px;
+    transition: all 0.3s;
 }
 
 p.itemLista {
-    width: 100%;
-    overflow: auto;
+    cursor: all-scroll;
+    overflow-x: auto;
+    color: white;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 25px;
 }
 
 .material-symbols-rounded {

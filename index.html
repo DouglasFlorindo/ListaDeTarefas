@@ -11,25 +11,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Shadows+Into+Light+Two&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="https://em-content.zobj.net/thumbs/120/microsoft/319/pencil_270f-fe0f.png">
     <link rel="stylesheet" href="listaDeTarefas.css">
-    <title>✏️ Tarefas</title>
+    <title>To Do List</title>
 </head>
 
 <body>
-    <nav>
-        <h1>Lista de Tarefas</h1>
-        <form>
-            <input type="text" placeholder="Insira a sua tarefa aqui..." id="inputTexto">
-            <button type="button" id="botaoCriar"><span class="material-symbols-rounded">edit</span></button>
-        </form>
-    </nav>
-    <div id="lista">
-    </div>
+    <section>
+        <nav>
+            <h1 id="titulo">To Do List</h1>
+            <form>
+                <input type="text" placeholder="Insert your task here..." id="inputTexto" autocomplete="off">
+                <button type="button" id="botaoCriar"><span class="material-symbols-rounded">edit</span></button>
+            </form>
+        </nav>
+        <div id="lista">
+        </div>
+    </section>
+    <footer>
+        <span class=" material-symbols-rounded footer botaoFooter">info</span>
+        
+        <p id="footer" class="footer">This website do not save your tasks nor your data.</p>
+
+        <span class="material-symbols-rounded footer botaoFooter"
+            onclick="document.getElementById('config').showModal()">settings</span>
+    </footer>
+    <dialog id="config">
+        <div id="areaConfig">
+            <p id="configTexto">Choose your theme:</p>
+            <div id="areaTemas">
+
+                <span class="temas" id="tema1" onclick="trocarTema('1')"></span>
+                <span class="temas" id="tema2" onclick="trocarTema('2')"></span>
+                <!-- <span class="temas" id="tema3" onclick="trocarTema(3)"></span>
+            <span class="temas" id="tema4" onclick="trocarTema(4)"></span> -->
+            </div>
+        </div>
+    </dialog>
 </body>
 
-<footer>
-    <p id="footer">Este site <strong>não</strong> salva os seus dados.</p>
-    <script src="listaDeTarefas.js"></script>
-</footer>
+<script src="listaDeTarefas.js"></script>
 
 </html>

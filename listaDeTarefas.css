@@ -1,6 +1,8 @@
 :root {
+    --tema: linear-gradient(to right top, #e86284, #df75b6, #c38edf, #9ca7f7, #73bcff);
     --destaque: #ec2356;
     --translucido: rgb(255, 255, 255, 0.3);
+    --translucidoPreto: rgb(0, 0, 0, 0.3);
 }
 
 * {
@@ -9,36 +11,45 @@
 }
 
 body {
-    background-image: linear-gradient(to right top, #e86284, #df75b6, #c38edf, #9ca7f7, #73bcff);
+    background: var(--tema);
     height: 100svh;
+    max-height: 100svh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+section {
+    width: 100svw;
+    height: 95%;
+    max-height: 95%;
+    display: flex;
     align-items: center;
 }
 
 nav {
-    width: 100svw;
-    height: 40%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 20px;
 }
 
 h1 {
     font-size: 55px;
-    width: 400px;
+    max-width: 400px;
     color: white;
     display: flex;
+    text-align: center;
     align-items: center;
-    justify-content: center;
     font-family: 'Bad Script', cursive;
-    text-shadow: 2px 2px rgb(172, 172, 172);
+    text-shadow: 2px 2px var(--destaque);
 }
 
 form {
     width: 100%;
-    max-width: 400px;
     margin: 20px 0px 15px 0px;
     display: flex;
     align-items: center;
@@ -50,7 +61,7 @@ button {
     color: white;
     box-sizing: border-box;
     margin: 0px 0px 0px 15px;
-    width: 50px;
+    min-width: 50px;
     height: 50px;
     border-radius: 25px;
     border: 0;
@@ -66,36 +77,108 @@ button:hover {
     scale: 1.2;
 }
 
+footer {
+    font-family: 'Shadows Into Light Two';
+    color: white;
+    width: 100svw;
+    height: 5%;
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+dialog::backdrop {
+    background: rgb(0, 0, 0, 0.5);
+}
+
+
 #inputTexto {
     box-sizing: border-box;
     padding: 15px;
-    width: 80%;
+    width: 100%;
     height: 50px;
     border-radius: 25px;
     border: 0;
     transition: all 0.3s;
 }
 
-#inputTexto:hover {
-    scale: 1.1;
-}
-
 #lista {
     display: flex;
     flex-direction: column;
-    max-height: 60%;
-    width: 100%;
-    max-width: 400px;
-    height: 55%;
-    overflow-x: hidden;
+    padding: 10px 20px;
+    margin: 20px;
+    width: 60%;
+    height: 70%;
+    max-height: 70%;
+    border: 0;
+    border-radius: 25px;
+    background-color: var(--translucidoPreto);
     overflow-y: auto;
-    align-items: center;
+    box-sizing: border-box;
 }
 
-#footer {
-    font-family: 'Shadows Into Light Two';
-    color: white;
+#config {
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    border: 0;
+}
+
+#areaConfig {
+    top: 0;
+    left: 0;
+    position: absolute;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+
+}
+
+#configTexto {
+    box-sizing: border-box;
+    font-family: 'Bad Script', cursive;
+    font-size: 25px;
     margin: 10px;
+    height: 50px;
+}
+
+#areaTemas {
+    box-sizing: border-box;
+    height: 50px;
+    margin: 10px;
+}
+
+.temas {
+    display: inline-block;
+    cursor: pointer;
+    margin: 5px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+#tema1 {
+    background-image: linear-gradient(to right top, #e86284, #df75b6, #c38edf, #9ca7f7, #73bcff);
+    border: 1px solid #ec2356;
+}
+
+#tema2 {
+    background-image: linear-gradient(to right top, #031542, #00427b, #006f8d, #009968, #55bc04);
+    border: 1px solid #81A5FE;
 }
 
 .checkBox {
@@ -114,12 +197,13 @@ button:hover {
     background-color: var(--translucido);
 }
 
-.checkBox:checked{
+.checkBox:checked {
     background-color: white;
 }
 
 .botaoDeletar {
     width: auto;
+    margin: 0;
     color: white;
     background-color: transparent;
 }
@@ -133,9 +217,10 @@ button:hover {
 }
 
 .itemLista {
+
     display: flex;
     width: 100%;
-    max-width: 400px;
+    box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
     min-height: 50px;
@@ -150,13 +235,32 @@ p.itemLista {
     font-size: 25px;
 }
 
+.footer {
+    margin: 0 20px;
+    font-size: 25px;
+}
+
 .material-symbols-rounded {
     font-variation-settings:
         'FILL' 1,
         'wght' 400,
         'GRAD' 0,
-        'opsz' 48
+        'opsz' 48;
+
 }
+
+.botaoFooter {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.botaoFooter:hover {
+    transform: rotate(10deg);
+    scale: 1.2;
+    color: var(--destaque);
+
+}
+
 
 ::-webkit-scrollbar {
     display: none;

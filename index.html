@@ -17,25 +17,17 @@
 </head>
 
 <body>
-    <section>
-        <nav>
-            <h1 id="titulo">To Do List</h1>
-            <form>
-                <input type="text" placeholder="Insert your task here..." id="inputTexto" autocomplete="off">
-                <button type="button" id="botaoCriar"><span class="material-symbols-rounded">edit</span></button>
-            </form>
-        </nav>
-        <div id="lista">
-        </div>
-    </section>
-    <footer>
-        <span class=" material-symbols-rounded footer botaoFooter">info</span>
-        
-        <p id="footer" class="footer">This website do not save your tasks nor your data.</p>
 
-        <span class="material-symbols-rounded footer botaoFooter"
-            onclick="document.getElementById('config').showModal()">settings</span>
-    </footer>
+    <nav>
+        <h1 id="titulo">To Do List</h1>
+        <form>
+            <input type="text" placeholder="Insert your task here..." id="inputTexto" autocomplete="off">
+            <button type="button" id="botaoCriar"><span class="material-symbols-rounded">edit</span></button>
+        </form>
+    </nav>
+    <div id="lista">
+    </div>
+
     <dialog id="config">
         <div id="areaConfig">
             <p id="configTexto">Choose your theme:</p>
@@ -43,13 +35,29 @@
 
                 <span class="temas" id="tema1" onclick="trocarTema('1')"></span>
                 <span class="temas" id="tema2" onclick="trocarTema('2')"></span>
-                <!-- <span class="temas" id="tema3" onclick="trocarTema(3)"></span>
-            <span class="temas" id="tema4" onclick="trocarTema(4)"></span> -->
+                <span class="temas" id="tema3" onclick="trocarTema('3')"></span>
             </div>
+            <button id="ok" onclick="document.getElementById('config').close()">Ok</button>
+        </div>
+    </dialog>
+
+    <dialog id="creditos">
+        <div id="areaCreditos">
+            <p id="creditosTexto">Website made by </p>
+            <a href="https://github.com/DouglasFlorindo">Douglas Florindo</a>
+            <button id="ok" onclick="document.getElementById('creditos').close()">Ok</button>
         </div>
     </dialog>
 </body>
 
-<script src="listaDeTarefas.js"></script>
+<footer>
+    <span class=" material-symbols-rounded footer botaoFooter"
+        onclick="document.getElementById('creditos').showModal()">info</span>
+    <p id="footer" class="footer">This website do not save your tasks nor your data.</p>
+    <span class="material-symbols-rounded footer botaoFooter"
+        onclick="document.getElementById('config').showModal()">settings</span>
+    <script src="listaDeTarefas.js"></script>
+</footer>
+
 
 </html>

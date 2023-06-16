@@ -11,21 +11,14 @@
 }
 
 body {
+    display: flex;
+    width: 100svw;
     background: var(--tema);
     height: 100svh;
-    max-height: 100svh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     overflow: hidden;
-}
-
-section {
-    width: 100svw;
-    height: 95%;
-    max-height: 95%;
-    display: flex;
-    align-items: center;
 }
 
 nav {
@@ -78,11 +71,13 @@ button:hover {
 }
 
 footer {
+    bottom: 0;
+    position: fixed;
     font-family: 'Shadows Into Light Two';
     color: white;
-    width: 100svw;
-    height: 5%;
-    margin: 10px;
+    width: 100%;
+    height: auto;
+    margin: 10px 0px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -93,6 +88,23 @@ dialog::backdrop {
     background: rgb(0, 0, 0, 0.5);
 }
 
+a {
+    text-decoration: none;
+    color: var(--destaque);
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#ok {
+    height: 40px;
+    box-sizing: border-box;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 15px;
+    margin: 10px;
+    height: 50px;
+    border-radius: 25px;
+}
 
 #inputTexto {
     box-sizing: border-box;
@@ -120,7 +132,6 @@ dialog::backdrop {
 }
 
 #config {
-
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -143,15 +154,12 @@ dialog::backdrop {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
-
 }
 
 #configTexto {
     box-sizing: border-box;
     font-family: 'Bad Script', cursive;
     font-size: 25px;
-    margin: 10px;
     height: 50px;
 }
 
@@ -177,8 +185,44 @@ dialog::backdrop {
 }
 
 #tema2 {
-    background-image: linear-gradient(to right top, #031542, #00427b, #006f8d, #009968, #55bc04);
-    border: 1px solid #81A5FE;
+    background-image: linear-gradient(to right top, #49e2ee, #14f0db, #4bfab5, #8eff82, #d2ff47);
+    border: 1px solid #4A56C4;
+}
+
+#tema3 {
+    background-image: linear-gradient(to right top, #fff277, #ffbc57, #ff7b6b, #ff36a0, #d633df);
+    border: 1px solid #C900D4;
+}
+
+#creditos {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    border: 0;
+}
+
+#areaCreditos {
+    top: 0;
+    left: 0;
+    position: absolute;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#creditosTexto {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 20px;
+    
 }
 
 .checkBox {
@@ -238,6 +282,7 @@ p.itemLista {
 .footer {
     margin: 0 20px;
     font-size: 25px;
+    text-shadow: 0 0 30px black;
 }
 
 .material-symbols-rounded {
@@ -261,7 +306,16 @@ p.itemLista {
 
 }
 
-
 ::-webkit-scrollbar {
     display: none;
+}
+
+::selection {
+    background: white;
+    color: var(--destaque);
+}
+
+::-moz-selection {
+    background: white;
+    color: var(--destaque);
 }

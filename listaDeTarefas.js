@@ -7,6 +7,7 @@ if (navigator.language === 'pt-BR') {
     document.getElementById('titulo').textContent = 'Lista de Tarefas';
     document.getElementById('inputTexto').setAttribute('placeholder', 'Insira a sua tarefa aqui...');  
     document.getElementById('footer').textContent = 'Este site não salva as suas tarefas nem os seus dados.';
+    document.getElementById('creditosTexto').textContent = 'Site feito por ';
     document.getElementById('configTexto').textContent = 'Escolha o seu tema:';
 };
 
@@ -67,18 +68,18 @@ function deletarTarefa(elemento) {
 
 function trocarTema(tema) {
     let root = document.querySelector(':root');
-    let modal = document.getElementById('config');
 
     switch (tema) {
         case "1":
             root.style.setProperty('--tema', 'linear-gradient(to right top, #e86284, #df75b6, #c38edf, #9ca7f7, #73bcff)');
             root.style.setProperty('--destaque', '#ec2356');
-            modal.close();
             break;
         case "2":
-            root.style.setProperty('--tema', 'linear-gradient(to right top, #031542, #00427b, #006f8d, #009968, #55bc04)');
-            root.style.setProperty('--destaque', '#81A5FE');
-            modal.close();
+            root.style.setProperty('--tema', 'linear-gradient(to right top, #49e2ee, #14f0db, #4bfab5, #8eff82, #d2ff47)');
+            root.style.setProperty('--destaque', '#4A56C4');
             break;
+        case "3":
+            root.style.setProperty('--tema', 'linear-gradient(to right top, #fff277, #ffbc57, #ff7b6b, #ff36a0, #d633df)');
+            root.style.setProperty('--destaque', '#C900D4')
     }
 };

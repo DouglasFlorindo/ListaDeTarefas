@@ -303,6 +303,7 @@ button.ok:hover {
     p.footer {
         font-size: 15px;
         margin: 0;
+        text-align: center;
     }
 
     span.footer {

@@ -78,6 +78,12 @@ button {
     align-items: center;
 }
 
+button.icon {
+    min-width: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+}
 
 #inputTexto {
     box-sizing: border-box;

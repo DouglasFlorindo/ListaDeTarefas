@@ -279,3 +279,33 @@ button.ok:hover {
     background: white;
     color: var(--destaque);
 }
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    
+    nav{
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    #lista {
+        margin-top: 0;
+        margin-bottom: 50px;
+        width: 80%;
+        
+    }
+
+    p.footer {
+        font-size: 15px;
+        margin: 0;
+    }
+
+    span.footer {
+        margin: 0 10px;
+    }
+}

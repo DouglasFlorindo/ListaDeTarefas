@@ -159,6 +159,7 @@ footer {
 .footer {
     margin: 0 20px;
     text-shadow: 0 0 30px black;
+    text-align: center;
 }
 
 dialog {
@@ -290,7 +291,7 @@ button.ok:hover {
     }
 
     h1 {
-        font-size: 50px;
+        font-size: clamp(30px, 10vw, 50px);
     }
 
     #lista {
@@ -303,7 +304,6 @@ button.ok:hover {
     p.footer {
         font-size: 15px;
         margin: 0;
-        text-align: center;
     }
 
     span.footer {

@@ -1,19 +1,15 @@
-const lista = document.getElementById('lista');
-const botaoCriar = document.getElementById('botaoCriar');
-const inputTexto = document.getElementById('inputTexto');
-
 if (navigator.language === 'pt-BR') {
     document.title = 'Lista de Tarefas';
     document.getElementById('titulo').textContent = 'Lista de Tarefas';
     document.getElementById('inputTexto').setAttribute('placeholder', 'Insira a sua tarefa aqui...');  
     document.getElementById('footer').textContent = 'Este site não salva as suas tarefas nem os seus dados.';
-    document.getElementById('creditosTexto').textContent = 'Site feito por ';
+    document.getElementById('creditosTexto').textContent = 'Feito por';
     document.getElementById('configTexto').textContent = 'Escolha o seu tema:';
 };
 
-botaoCriar.addEventListener('click', criarTarefa);
+document.getElementById('botaoCriar').addEventListener('click', criarTarefa);
 
-inputTexto.addEventListener('keypress', (event) => {
+document.getElementById('inputTexto').addEventListener('keypress', (event) => {
     if (event.key === "Enter") {
         event.preventDefault();
         criarTarefa();
@@ -25,11 +21,10 @@ function criarTarefa() {
     let conteudoTarefa = document.getElementById("inputTexto").value;
 
     if (conteudoTarefa) {
-
-        let novoDiv = document.createElement('dib');
+        const lista = document.getElementById('lista');
+        let novoDiv = document.createElement('div');
         let novoP = document.createElement('p');
         let novoInput = document.createElement('input');
-        let novoButton = document.createElement('button');
         let novoSpan = document.createElement('span');
 
         novoDiv.className = "itemLista";
@@ -44,13 +39,12 @@ function criarTarefa() {
         novoP.textContent = conteudoTarefa;
         novoDiv.appendChild(novoP);
 
-        novoButton.className = "botaoDeletar";
-        novoButton.setAttribute("onclick", "deletarTarefa(this)");
-        novoDiv.appendChild(novoButton);
-
-        novoSpan.className = "material-symbols-rounded";
+        novoSpan.className = "botaoDeletar";
+        novoSpan.setAttribute("onclick", "deletarTarefa(this)");
+        novoSpan.classList.add("material-symbols-rounded");
+        novoSpan.classList.add("clicavel");
         novoSpan.textContent = "delete";
-        novoButton.appendChild(novoSpan);
+        novoDiv.appendChild(novoSpan);
     }
 };
 
